@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "author": "Lucas",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp", "top": 20, "left": 20, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -143.7,
+      "left": 263.4,
+      "attrs": { "temperature": "25", "humidity": "50" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": -145.3,
+      "left": 374.2,
+      "attrs": { "value": "50" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnN",
+      "top": 73.4,
+      "left": -384,
+      "attrs": { "color": "green", "label": "N" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnP",
+      "top": 73.4,
+      "left": -297.6,
+      "attrs": { "color": "blue", "label": "P" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnK",
+      "top": 73.4,
+      "left": -201.6,
+      "attrs": { "color": "red", "label": "K" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -60, "left": 60, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -32.4,
+      "left": -44.2,
+      "attrs": { "color": "blue", "label": "Bomba ON" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rLed",
+      "top": 3.95,
+      "left": -96,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "dht1:VCC", "red", [] ],
+    [ "esp:GND.1", "dht1:GND", "black", [] ],
+    [ "esp:D23", "dht1:SDA", "blue", [] ],
+    [ "esp:3V3", "pot1:VCC", "red", [] ],
+    [ "esp:GND.2", "pot1:GND", "black", [] ],
+    [ "esp:VP", "pot1:SIG", "green", [] ],
+    [ "esp:D13", "btnN:1.l", "green", [] ],
+    [ "esp:GND.1", "btnN:2.l", "black", [] ],
+    [ "esp:D12", "btnP:1.l", "blue", [] ],
+    [ "esp:GND.2", "btnP:2.l", "black", [] ],
+    [ "esp:D14", "btnK:1.l", "red", [] ],
+    [ "esp:GND.2", "btnK:2.l", "black", [] ],
+    [ "esp:3V3", "relay1:VCC", "red", [] ],
+    [ "esp:GND.3", "relay1:GND", "black", [] ],
+    [ "esp:D27", "relay1:IN", "orange", [] ],
+    [ "esp:D26", "rLed:1", "blue", [] ],
+    [ "rLed:2", "led1:A", "blue", [ "h85.2" ] ],
+    [ "led1:C", "esp:GND.3", "black", [] ]
+  ],
+  "dependencies": {}
+}
