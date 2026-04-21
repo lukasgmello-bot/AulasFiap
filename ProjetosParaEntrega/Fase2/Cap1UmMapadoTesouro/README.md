@@ -56,7 +56,7 @@ Caso contrário, o sistema mantém a bomba desligada.
 
 ## Circuito no Wokwi
 
-![Circuito](imagens/circuito.png)
+![Circuito](imagem/circuito.png)
 
 ## Vídeo Demonstrativo
 
