@@ -54,3 +54,7 @@ As credenciais de banco não foram utilizadas na execução atual por conta de p
 Lucas Henrique Aparecido Gomes de Mello
 RM569583
 FIAP — 1TIAOB — Fase 2
+
+## Vídeo do projeto
+
+https://youtu.be/6Q8Bngw_Flg
